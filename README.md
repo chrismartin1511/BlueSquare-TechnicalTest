@@ -1,5 +1,5 @@
-# CM-TechnicalTest
-Blue Square Technical Test for Chris Martin
+# BlueSquare-TechnicalTest
+This is the Blue Square Technical Test
 
 ## Scenario
 A customer has a web-based solution for creating, managing and closing repair jobs for the business. The system is archaic and they don’t have the skills in-house to integrate it with other solutions, but we have access to their database.
