@@ -2,7 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace JobService.Dtos
 {
-    public class JobDto
+    // Write to MongoDb
+    public class JobPublishedDto
     {
         public int JobId { get; set; }
 

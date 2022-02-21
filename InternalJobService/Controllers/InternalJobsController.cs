@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using InternalJobService.Models;
@@ -36,9 +37,18 @@ namespace JobStoreApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(Job newJob)
         {
+            var getJob = await _jobsService.GetAsync(newJob.JobId);
+
+            if (getJob != null)
+            {
+                Console.WriteLine($"--> Job with ID: {newJob.JobId} already exists");
+
+                return BadRequest();
+            }
+
             await _jobsService.CreateAsync(newJob);
 
-            return CreatedAtAction(nameof(Get), new { id = newJob.Id }, newJob);
+            return CreatedAtAction(nameof(Get), new { jobId = newJob.JobId }, newJob);
         }
 
         [HttpPut("{id}")]

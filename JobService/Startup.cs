@@ -34,7 +34,7 @@ namespace JobService
         services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InMem"));
 
         // MySql Database setup
-        Console.WriteLine("--> Using MySql Db");
+        //Console.WriteLine("--> Using MySql Db");
         // var connectionString = Configuration.GetConnectionString("ExternalJobConnection");
         // Console.WriteLine($"--> Connection String: {connectionString}");
 
