@@ -80,9 +80,6 @@ namespace JobService.Controllers
                     
                     _messageBusClient.PublishJobTransaction(jobTransactionPublishedDto);
 
-                    // var jobPublishedDto = _mapper.Map<JobPublishedDto>(newJobItem);
-
-                    // _messageBusClient.PublishJob(jobPublishedDto);
                 }
             }
             catch(Exception ex)
