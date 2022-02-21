@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jobtransactions-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jobtransactionservice
+  template:
+    metadata:
+      labels:
+        app: jobtransactionservice
+    spec:
+      containers:
+        - name: jobtransactionservice
+          image: chrism1511/jobtransactionservice:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jobtransactions-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: jobtransactionservice
+  ports:
+  - name: jobtransactionservice
+    protocol: TCP
+    port: 80
+    targetPort: 80
